@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:layout_gravity="center"
+    android:background="@color/backgrounddangnhap"
+    tools:context=".MainActivity">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+        <EditText
+            android:id="@+id/edittextuser"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_login"
+            android:gravity="center"
+            android:hint="@string/main_usernameHint"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textColorHint="@color/edittextlogin" />
+
+        <EditText
+            android:id="@+id/edittextpass"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_login"
+            android:gravity="center"
+            android:hint="@string/main_passwordHint"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textColorHint="@color/edittextlogin" />
+
+
+        <LinearLayout
+            android:id="@+id/DN_DK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonDangNhap"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="40dp"
+                android:background="@drawable/button_stye"
+                android:text="@string/main_loginButton"
+                android:textColor="@color/Buttontext"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/buttonDangKi"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_stye"
+                android:text="@string/main_signinButton"
+                android:textColor="@color/Buttontext"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/DN_DK_GG_FB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/backgrounđangki"
+            android:orientation="horizontal"
+            />
+
+        <TextView
+            android:id="@+id/QuenMK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="30dp"
+            android:maxLines="1"
+            android:text="@string/main_QuenMaTKhau"
+            android:textColor="@color/edittextlogin"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+
+
+</LinearLayout>

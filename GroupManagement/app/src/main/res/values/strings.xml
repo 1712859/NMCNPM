@@ -1,0 +1,191 @@
+<resources>
+    <string name="app_name">Group Management</string>
+
+    <string name="main_usernameHint">Email Hoặc SĐT</string>
+    <string name="main_passwordHint">Mật Khẩu</string>
+    <string name="main_loginButton">Đăng Nhập</string>
+    <string name="main_signinButton">Tạo Tài KHoảng</string>
+    <string name="main_QuenMaTKhau">Quên Mật Khẩu</string>
+
+    <string name="main_DangNhapKhac">Hoặc Đăng Nhập Khác ----------------------------------------------------</string>
+
+    <string name="dangky_Phai">Nam Hặc Nữ</string>
+    <string name="dangky_Date">Ngày Sinh (yyyy-mm-dd)</string>
+    <string name="dangky_address">Địa Chỉ</string>
+    <string name="dangky_password">Mật Khẩu</string>
+    <string name="dangky_email">Email</string>
+    <string name="dangky_fullname">Họ Tên</string>
+    <string name="dangky_phoneNumber">SĐT</string>
+    <string name="dangky_signinButton">Tạo Tài Khoảng</string>
+    <string name="dangky_cancelButton">Thoát</string>
+
+    <string name="main2_viewUserProfile">Xem thông tin người dùng</string>
+    <string name="main2_createTour">Tạo một chuyến đi mới</string>
+    <string name="main2_viewAvailableTourList">Xem danh sách các chuyến đi hiện có</string>
+    <string name="main2_Đăng_xuất">Đắng xuất</string>
+
+    <string name="tourItem_hint_title">Tên tour</string>
+    <string name="tourItem_hint_price">Giá: </string>
+    <string name="tourItem_hint_priceMin">000.000</string>
+    <string name="tourItem_hint_priceMax">000.000</string>
+    <string name="tourItem_hint_time">Thời gian: </string>
+    <string name="tourItem_hint_timeMin">00/00/2019</string>
+    <string name="tourItem_hint_timeMax">00/00/2019</string>
+    <string name="tourItem_separator">~</string>
+    <string name="tourItem_avatarDescription">Ảnh đại điện chuyến đi</string>
+    <string name="tourItem_money">Đ</string>
+
+    <string name="tourAvailable_createTour">Tạo chuyến đi mới</string>
+    <string name="tourAvailable_availableTour">Danh sách chuyến đi hiện có</string>
+    <string name="tourAvailable_previousPageBtn">Trang trước</string>
+    <string name="tourAvailable_nextPageBtn">Trang kế</string>
+    <string name="tourAvailable_currentPageText_hint">1</string>
+
+    <string name="tourDetail_tourName_hint">Tên tour</string>
+    <string name="tourDetail_tourID">Mã tour: </string>
+    <string name="tourDetail_tourID_hint">00000000</string>
+    <string name="tourDetail_tourAdult">Số người lớn:</string>
+    <string name="tourDetail_tourAdult_hint">00</string>
+    <string name="tourDetail_tourChild">Số trẻ em:</string>
+    <string name="tourDetail_tourChild_hint">00</string>
+    <string name="tourDetail_cost">Tầm giá</string>
+    <string name="tourDetail_minCost_hint">giá tối thiểu</string>
+    <string name="tourDetail_maxCost_hint">giá tối đa</string>
+    <string name="tourDetail_date">Thời gian</string>
+    <string name="tourDetail_startDate_hint">ngày bắt đầu</string>
+    <string name="tourDetail_endDate_hint">ngày kết thúc</string>
+    <string name="tourDetail_updateTourBtn">Chỉnh sửa chuyến đi</string>
+    <string name="tourDetail_addCommentBtn">Thêm bình luận</string>
+    <string name="tourDetail_stopPointListText">Danh sách điểm dừng</string>
+    <string name="tourDetail_addStopPointBtn">Thêm điểm dừng</string>
+    <string name="tourDetail_status">trạng thái:</string>
+    <string name="tourDetail_status_hint">không rõ</string>
+    <string-array name="tourDetail_status">
+        <item>Bị hủy</item>
+        <item>Đang mở</item>
+        <item>Đã bắt đầu</item>
+        <item>Đã kết thúc</item>
+        <item>…</item>
+        <item>…</item>
+        <item>…</item>
+    </string-array>
+    <string-array name="tourDetail_infoSpinner">
+        <item>Danh sách điểm dừng</item>
+        <item>Bình luận</item>
+        <item>Các thành viên</item>
+    </string-array>
+
+    <string name="facebook_app_id">737774043369479</string>
+    <string name="fb_login_protocol_scheme">fb737774043369479</string>
+    <!--    -->
+    <!--    <string name="facebook_app_id">1032814657050860</string>-->
+    <!--    <string name="fb_login_protocol_scheme">fb1032814657050860</string>-->
+
+
+    <string name="createTour_title">Tạo chuyến đi</string>
+    <string name="createTour_tourName">Tên chuyến đi</string>
+    <string name="createTour_startDate">Ngày bắt đầu</string>
+    <string name="createTour_endDate">Ngày kết thúc</string>
+    <string name="createTour_adult">Số người lớn</string>
+    <string name="createTour_child">Số trẻ em</string>
+    <string name="createTour_maxCost">Chi phí tối đa</string>
+    <string name="createTour_minCost">Chi phí tối thiểu</string>
+    <string name="createTour_imageUrl">Link ảnh minh họa</string>
+    <string name="createTour_private">Tour cá nhân</string>
+    <string name="createTour_public">Tour công cộng</string>
+    <string name="createTour_pickStartEnd">Chọn điểm bắt đầu/kết thúc</string>
+    <string name="createTour_createBtn">Xác nhận</string>
+
+    <string name="pickStartEnd_pickStartPointBtn">Chọn vị trí bắt đầu chuyến đi</string>
+    <string name="pickStartEnd_pickEndPointBtn">Chọn vị trí kết thúc chuyến đi</string>
+    <string name="pickStartEnd_startPointInfo_hint">Vị trí bắt đầu:\n 0, 0</string>
+    <string name="pickStartEnd_endPointInfo_hint">Vị trí kết thúc:\n 0, 0</string>
+    <string name="pickStartEnd_confirmBtn">Xác nhận</string>
+
+    <string name="mapGetLocation_searchBtn">Tìm vị trí</string>
+    <string name="mapGetLocation_confirmBtn">Xác nhận</string>
+    <string name="mapGetLocation_targetIconDescription">thể hiện vị trí người dùng chọn</string>
+
+    <string name="profile_email">Email:</string>
+    <string name="profile_sdt">SĐT:</string>
+    <string name="profile_Phai">Phái:</string>
+    <string name="profile_date">Ngày Sinh:</string>
+    <string name="profile_address">Địa Chỉ:</string>
+    <string name="profile_email_value">Không có Email</string>
+    <string name="profile_sdt_value">Không có SĐT</string>
+    <string name="profile_Phai_value">Phái</string>
+    <string name="profile_date_value">Không Có Ngày Sinh</string>
+    <string name="profile_address_value">Không Có Địa chỉ</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="tourUpdate_title">Chỉnh sửa chuyến đi</string>
+    <string name="tourUpdate_tourName">Tên chuyến đi:</string>
+    <string name="tourUpdate_startDate">Ngày bắt đầu:</string>
+    <string name="tourUpdate_endDate">Ngày kết thúc:</string>
+    <string name="tourUpdate_adults">Số người lớn:</string>
+    <string name="tourUpdate_childs">Số trẻ em:</string>
+    <string name="tourUpdate_minCost">Chi phí tối thiểu:</string>
+    <string name="tourUpdate_maxCost">Chi phí tối đa:</string>
+    <string name="tourUpdate_avatar">Ảnh minh họa:</string>
+    <string name="tourUpdate_status">Trạng thái:</string>
+    <string name="tourUpdate_privateBtn">Chuyến đi cá nhân</string>
+    <string name="tourUpdate_publicBtn">Chuyến đi tập thể</string>
+    <string name="tourUpdate_pickStartEndBtn">Chọn điểm bắt đầu/kết thúc</string>
+    <string name="tourUpdate_confirmBtn">Xác nhận</string>
+    <string-array name="tourUpdate_status">
+        <item>Bị hủy</item>
+        <item>Đang mở</item>
+        <item>Đã bắt đầu</item>
+        <item>Đã kết thúc</item>
+        <item>…</item>
+        <item>…</item>
+        <item>…</item>
+    </string-array>
+
+    <string name="userTour_title">Danh sách các chuyến đi của người dùng</string>
+    <string name="userTour_createTour">Tạo chuyến đi mới</string>
+    <string name="userTour_previousPageBtn">Trang trước</string>
+    <string name="userTour_nextPageBtn">Trang kế</string>
+    <string name="userTour_currentPageText_hint">1</string>
+
+    <string name="stopPoint_name">Tên điểm dừng</string>
+    <string name="stopPoint_avatarDescription">hình ảnh minh họa</string>
+    <string name="stopPoint_cost">chi phí</string>
+    <string name="stopPoint_minCost_hint">tối thiểu</string>
+    <string name="stopPoint_maxCost_hint">tối đa</string>
+    <string name="stopPoint_time">thời gian</string>
+    <string name="stopPoint_arrivalAt_hint">bắt đầu</string>
+    <string name="stopPoint_leaveAt_hint">kết thúc</string>
+
+    <string name="addStopPoint_title">Tạo điểm dừng</string>
+    <string name="addStopPoint_name">Tên điểm dừng:</string>
+    <string name="addStopPoint_arrivalAt">Thời gian đến:</string>
+    <string name="addStopPoint_leaveAt">Thời gian đi:</string>
+    <string name="addStopPoint_minCost">Giá tối thiểu:</string>
+    <string name="addStopPoint_maxCost">Giá tối đa:</string>
+    <string name="addStopPoint_selectLocationBtn">Chọn vị trí điểm dừng</string>
+    <string name="addStopPoint_address_hint">Xin hãy chọn điểm dừng</string>
+    <string name="addStopPoint_confirmBtn">Xác nhận</string>
+    <string name="addStopPoint_avatar">Ảnh minh họa</string>
+    <string name="title_activity_forgot_pass">forgot_pass</string>
+
+    <string name="comment_avatar_hint">Ảnh đại diện</string>
+    <string name="comment_id_hint">ID bình luận</string>
+    <string name="comment_name_hint">Tên bình luận</string>
+    <string name="comment_comment_hint">Nội dung bình luận</string>
+
+    <string name="member_avatar_hint">Ảnh đại diện</string>
+    <string name="member_id_hint">ID nhân viên</string>
+    <string name="member_name_hint">Tên nhân viên</string>
+    <string name="member_phone_hint">SĐT</string>
+
+    <string name="addComment_content_hint">Nội dung bình luận</string>
+    <string name="addComment_submitBtn">Đăng bình luận</string>
+    <string name="title_activity_main_app">main_app</string>
+
+<!--  menu fragment  -->
+    <string name="title_home">Phòng</string>
+    <string name="title_dashboard">Thông Báo</string>
+    <string name="title_notifications">Tài Khoảng</string>
+
+</resources>

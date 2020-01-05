@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:layout_marginStart="5dp"
+    android:layout_marginEnd="10dp">
+
+    <ImageView
+        android:id="@+id/image_room"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        tools:srcCompat="@tools:sample/avatars[0]" />
+    <TextView
+        android:id="@+id/name_room"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:hint="Không có Tên Phòng"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColorHint="@color/backgrounddangnhap"
+        android:textColor="@color/backgrounddangnhap">
+
+    </TextView>
+</LinearLayout>
