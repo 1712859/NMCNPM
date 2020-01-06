@@ -185,7 +185,7 @@
 
 <!--  menu fragment  -->
     <string name="title_home">Phòng</string>
-    <string name="title_dashboard">Thông Báo</string>
-    <string name="title_notifications">Tài Khoảng</string>
+    <string name="title_dashboard">Tài Khoản</string>
+    <string name="title_notifications">Thông Báo</string>
 
 </resources>

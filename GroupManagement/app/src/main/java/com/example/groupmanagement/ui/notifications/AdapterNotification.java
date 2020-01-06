@@ -1,7 +1,6 @@
-package com.example.groupmanagement.ui.home;
+package com.example.groupmanagement.ui.notifications;
 
 import android.content.Context;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,13 +12,13 @@ import com.example.groupmanagement.R;
 
 import java.util.List;
 
-public class AdapterRoom  extends BaseAdapter {
+public class AdapterNotification extends BaseAdapter {
 
-    private List<Room> listData;
+    private List<Notification> listData;
     private LayoutInflater layoutInflater;
     private Context context;
 
-    public AdapterRoom(Context aContext,  List<Room> listData) {
+    public AdapterNotification(Context aContext, List<Notification> listData) {
         this.context = aContext;
         this.listData = listData;
         layoutInflater = LayoutInflater.from(aContext);
@@ -43,23 +42,23 @@ public class AdapterRoom  extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
         if (convertView == null) {
-            convertView = layoutInflater.inflate(R.layout.room_item, null);
+            convertView = layoutInflater.inflate(R.layout.notification_item, null);
             holder = new ViewHolder();
-            holder.image_room = (ImageView) convertView.findViewById(R.id.image_room);
-            holder.name_room = (TextView) convertView.findViewById(R.id.name_room);
+            holder.icon_notification = (ImageView) convertView.findViewById(R.id.ivIcon);
+            holder.title_notification = (TextView) convertView.findViewById(R.id.tvTitleNotification);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        Room room = this.listData.get(position);
-        holder.name_room.setText(room.getName());
+        Notification notification = this.listData.get(position);
+        holder.title_notification.setText(notification.getTitle());
         return convertView;
     }
 
     static class ViewHolder {
-        ImageView image_room;
-        TextView name_room;
+        ImageView icon_notification;
+        TextView title_notification;
     }
 
 }

@@ -12,20 +12,22 @@
     android:background="@drawable/rectangle">
 
     <ImageView
-        android:id="@+id/image_room"
+        android:id="@+id/ivIcon"
         android:layout_width="80dp"
         android:layout_height="80dp"
         tools:srcCompat="@tools:sample/avatars[0]" />
+
     <TextView
-        android:id="@+id/name_room"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/tvTitleNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
         android:hint="Không có Tên Phòng"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textSize="20dp"
+        android:textColor="@color/black"
         android:textColorHint="@color/black"
-        android:textColor="@color/black">
+        android:textSize="20dp"
+        android:textStyle="bold">
 
     </TextView>
+
 </LinearLayout>

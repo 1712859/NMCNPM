@@ -1,14 +1,18 @@
 package com.example.groupmanagement.ui.home;
 
 
+import android.database.DataSetObserver;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import android.widget.Adapter;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 
@@ -25,8 +29,6 @@ public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
     private List<Room> mListRoom = new ArrayList<>();
-    private RecyclerView recyclerView;
-    private AdapterRoom adapterRoom;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -34,24 +36,16 @@ public class HomeFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         // get data tư api
         prepareRoomData();
-        recyclerView = root.findViewById(R.id.recycler_room);
-        adapterRoom = new AdapterRoom(getActivity(),mListRoom);
+        final ListView listView = (ListView) root.findViewById(R.id.lvRoom);
+        listView.setAdapter(new AdapterRoom(getContext(), mListRoom));
 
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(container.getContext());
-        recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(adapterRoom);
         return root;
-
     }
-
     private void prepareRoomData() {
-        Room movie = new Room("aaaaaa");
-        mListRoom.add(movie);
-        Room movie1 = new Room("bbbbb");
-        mListRoom.add(movie);
-        Room movie2 = new Room("vvvvv");
-        mListRoom.add(movie);
+        for(int i = 0; i < 15; i++){
+            Room notification = new Room("Notification " + i);
+            mListRoom.add(notification);
+        }
     }
 
 }
