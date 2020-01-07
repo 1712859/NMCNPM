@@ -10,10 +10,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ListView;
 
-import com.example.groupmanagement.MainActivity;
 import com.example.groupmanagement.R;
+import com.example.groupmanagement.addMember;
 import com.example.groupmanagement.addMission;
-import com.example.groupmanagement.main_app;
 
 import java.util.ArrayList;
 import java.util.List;

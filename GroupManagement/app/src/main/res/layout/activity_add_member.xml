@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.addMember"
+    tools:context=".addMember"
     android:background="@color/backgrounddangnhap">
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/addMember_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:textAlignment="center"
         android:hint="Nhận email"
         android:textColorHint="@color/textwhile"
         android:textColor="@color/textwhile"
@@ -27,10 +28,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="50dp"
-        app:layout_constraintTop_toBottomOf="@+id/editText">
+        app:layout_constraintTop_toBottomOf="@+id/addMember_email">
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/addMember_oke"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/button_stye"
@@ -45,7 +46,7 @@
             android:background="#00000000" />
 
         <Button
-            android:id="@+id/button7"
+            android:id="@+id/addMember_huy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/button_stye"

@@ -8,7 +8,7 @@
     android:background="@color/backgrounddangnhap">
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/mission_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/mission_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -31,10 +31,10 @@
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/mission_title" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -45,22 +45,22 @@
         android:hint="Địa chỉ điểm đến"
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/mission_spinner" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonmap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="map"
         android:textColor="@color/backgrounddangnhap"
         android:textStyle="bold"
         android:background="@drawable/button_stye"
-        app:layout_constraintBottom_toBottomOf="@+id/editText3"
+        app:layout_constraintBottom_toBottomOf="@+id/location"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editText3" />
+        app:layout_constraintStart_toEndOf="@+id/location" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/mission_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -71,10 +71,10 @@
         android:layout_marginTop="20dp"
         android:hint="Ngày bắt đầu"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+        app:layout_constraintTop_toBottomOf="@+id/location" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/mission_end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -85,7 +85,7 @@
         android:textColor="@color/textwhile"
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+        app:layout_constraintTop_toBottomOf="@+id/mission_start" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -93,17 +93,16 @@
         android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5">
+        app:layout_constraintTop_toBottomOf="@+id/mission_end">
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/mission_oke"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/button_stye"
             android:text="Xác Nhận"
             android:textColor="@color/backgrounddangnhap"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/button6"
@@ -113,7 +112,7 @@
             />
 
         <Button
-            android:id="@+id/button7"
+            android:id="@+id/mission_huy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/button_stye"

@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.example.groupmanagement.apihelper.loginAccount.LoginAccountApiIml;
 import com.example.groupmanagement.listener.LoginListener;
 import com.example.groupmanagement.model.Account;
+import com.example.groupmanagement.ui.home.room_detail;
 import com.google.gson.JsonObject;
 
 import butterknife.BindView;
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.edittextpass)
     EditText edtPassword;
 
-    Button login;
+    Button login,logout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         //Click Login Button
 
         login = (Button)findViewById(R.id.buttonDangNhap);
+        logout = findViewById(R.id.buttonDangKi);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,6 +61,13 @@ public class MainActivity extends AppCompatActivity {
                         //throw new Error(e);
                     }
                 });
+            }
+        });
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, create_account.class);
+                startActivity(intent);
             }
         });
 
