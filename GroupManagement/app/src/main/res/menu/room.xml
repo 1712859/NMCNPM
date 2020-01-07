@@ -12,12 +12,10 @@
         <menu>
             <item
                 android:id="@+id/room_addMember"
-                android:icon="@drawable/ic_"
                 android:title="Thêm thành viên" />
 
             <item
                 android:id="@+id/room_addMission"
-                android:icon="@drawable/ic_notifications_black_24dp"
                 android:title="Thêm nhiệm vụ" />
         </menu>
     </item>
