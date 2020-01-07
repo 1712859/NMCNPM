@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.edittextpass)
     EditText edtPassword;
 
-    Button login;
+    Button login,logout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,8 +37,10 @@ public class MainActivity extends AppCompatActivity {
         //Buttnife
         ButterKnife.bind(this);
         //Click Login Button
-
+        edtUsername.setText("tin98");
+        edtPassword.setText("123456");
         login = (Button)findViewById(R.id.buttonDangNhap);
+        logout = findViewById(R.id.buttonDangKi);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,6 +65,13 @@ public class MainActivity extends AppCompatActivity {
                         //throw new Error(e);
                     }
                 });
+            }
+        });
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, create_account.class);
+                startActivity(intent);
             }
         });
 
