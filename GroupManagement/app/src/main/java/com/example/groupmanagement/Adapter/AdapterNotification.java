@@ -1,4 +1,4 @@
-package com.example.groupmanagement.ui.notifications;
+package com.example.groupmanagement.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,11 +9,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.groupmanagement.R;
+import com.example.groupmanagement.model.Notification;
 
 import java.util.List;
 
 public class AdapterNotification extends BaseAdapter {
-
     private List<Notification> listData;
     private LayoutInflater layoutInflater;
     private Context context;

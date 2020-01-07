@@ -9,7 +9,9 @@ import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.example.groupmanagement.Adapter.AdapterNotification;
 import com.example.groupmanagement.R;
+import com.example.groupmanagement.model.Notification;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.groupmanagement">
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- Xin quyền kết nối internet -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
 
     <application
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -12,6 +18,7 @@
         <activity android:name=".addMission" />
         <activity android:name=".ui.home.addMember" />
         <activity android:name=".create_account" />
+        <activity android:name=".AddRoom" />
         <activity android:name=".ui.home.room_detail" />
         <activity
             android:name=".main_app"

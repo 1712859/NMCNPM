@@ -1,4 +1,4 @@
-package com.example.groupmanagement.ui.notifications;
+package com.example.groupmanagement.model;
 
 public class Notification {
     String title;

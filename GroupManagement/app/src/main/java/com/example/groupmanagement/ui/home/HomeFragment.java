@@ -2,7 +2,6 @@ package com.example.groupmanagement.ui.home;
 
 
 import android.content.Intent;
-import android.database.DataSetObserver;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -10,25 +9,18 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
+import com.example.groupmanagement.Adapter.AdapterRoom;
+import com.example.groupmanagement.AddRoom;
 import com.example.groupmanagement.R;
-import com.example.groupmanagement.ui.notifications.Notification;
+import com.example.groupmanagement.model.Room;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,7 +50,8 @@ public class HomeFragment extends Fragment {
         int id = item.getItemId();
         switch (id) {
             case R.id.btnAddRoom:
-                // do stuff
+                Intent intent = new Intent(getContext(), AddRoom.class);
+                startActivity(intent);
                 return true;
         }
 
