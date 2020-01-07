@@ -1,4 +1,4 @@
-package com.example.groupmanagement.ui.home;
+package com.example.groupmanagement.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,12 +7,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.ArrayAdapter;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 
 import com.example.groupmanagement.R;
+import com.example.groupmanagement.model.Room;
 
 import java.util.List;
 

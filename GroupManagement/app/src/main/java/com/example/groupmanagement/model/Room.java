@@ -1,4 +1,4 @@
-package com.example.groupmanagement.ui.home;
+package com.example.groupmanagement.model;
 
 public class Room {
     String name;
