@@ -63,4 +63,22 @@ public class LoginAccountApiIml extends BaseRetrofitIml {
             }
         });
     }
+//    public void createroom(String name, String,final LoginListener listener)
+//    {
+//        loginAccountApi = retrofit.create(LoginAccountApi.class);
+//        final JsonObject body = new JsonObject();
+//        body.addProperty("name", name);
+//        Call<ResponseBody> call = loginAccountApi.loginAccount(body);
+//        call.enqueue(new Callback<ResponseBody>() {
+//            @Override
+//            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+//
+//            }
+//
+//            @Override
+//            public void onFailure(Call<ResponseBody> call, Throwable t) {
+//
+//            }
+//        });
+//    }
 }
