@@ -20,11 +20,9 @@ import androidx.fragment.app.Fragment;
 
 import com.example.groupmanagement.Adapter.AdapterRoom;
 import com.example.groupmanagement.AddRoom;
-import com.example.groupmanagement.MainActivity;
 import com.example.groupmanagement.R;
 import com.example.groupmanagement.apihelper.loginAccount.LoginAccountApiIml;
 import com.example.groupmanagement.listener.LoginListener;
-import com.example.groupmanagement.main_app;
 import com.example.groupmanagement.model.Account;
 import com.example.groupmanagement.model.Room;
 
@@ -50,17 +48,6 @@ public class HomeFragment extends Fragment {
             passWord = args.getString("passWord");
         }
         setHasOptionsMenu(true);
-        final ListView listView = (ListView) root.findViewById(R.id.lvRoom);
-        listView.setAdapter(new AdapterRoom(getContext(), mListRoom));
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(root.getContext(), room_detail.class);
-                intent.putExtra("idRoom", mListRoom.get(position).getIdroom());
-                startActivity(intent);
-            }
-        });
-        registerForContextMenu(listView);
         return root;
     }
 
@@ -84,11 +71,34 @@ public class HomeFragment extends Fragment {
     }
 
     private void prepareRoomData(String jwt, String userName, String passWord) {
+        new LoginAccountApiIml().authAccountAsync(userName, passWord, new LoginListener() {
+            @Override
+            public void getDataSuccess(Account account, ArrayList<Room> rooms) {
+                mListRoom = rooms;
+                final ListView listView = (ListView) getActivity().findViewById(R.id.lvRoom);
+                listView.setAdapter(new AdapterRoom(getContext(), mListRoom));
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        Intent intent = new Intent(getContext(), room_detail.class);
+                        intent.putExtra("idRoom", mListRoom.get(position).getIdroom());
+                        startActivity(intent);
+                    }
+                });
+                registerForContextMenu(listView);
+            }
 
+            @Override
+            public void getMessageError(Exception e) {
+                Toast.makeText(getContext(), e.toString(), Toast.LENGTH_SHORT).show();
+                throw new Error(e);
+            }
+        });
     }
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        prepareRoomData(jwt, userName, passWord);
+        super.onActivityCreated(savedInstanceState);
     }
 }

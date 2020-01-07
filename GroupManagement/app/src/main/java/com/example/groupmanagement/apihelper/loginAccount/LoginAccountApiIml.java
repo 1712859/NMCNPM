@@ -5,11 +5,15 @@ import android.util.Log;
 import com.example.groupmanagement.apihelper.BaseRetrofitIml;
 import com.example.groupmanagement.listener.LoginListener;
 import com.example.groupmanagement.model.Account;
+import com.example.groupmanagement.model.Room;
 import com.google.gson.JsonObject;
+
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -23,7 +27,7 @@ public class LoginAccountApiIml extends BaseRetrofitIml {
     Retrofit retrofit = getRetrofit();
 
     //Xác thực tài khoản
-    public void authAccount (String userName, String passWord, final LoginListener listener) {
+    public void authAccountAsync(String userName, String passWord, final LoginListener listener) {
         loginAccountApi = retrofit.create(LoginAccountApi.class);
         final JsonObject body = new JsonObject();
         body.addProperty("identifier", userName);
@@ -45,9 +49,16 @@ public class LoginAccountApiIml extends BaseRetrofitIml {
                             String phone = null;
                             String avatar = null;
                             Account account = new Account(jwt, username, phone, email, avatar);
-                            listener.getDataSuccess(account);
+                            ArrayList<Room> rooms = new ArrayList<>();
+                            JSONArray owner_of_rooms = user.getJSONArray("owner_of_rooms");
+                            for (int i = 0; i < owner_of_rooms.length(); i++) {
+                                String r_name = owner_of_rooms.getJSONObject(i).getString("name");
+                                String r_id = owner_of_rooms.getJSONObject(i).getString("id");
+                                rooms.add(new Room(r_name, r_id));
+                            }
+                            listener.getDataSuccess(account, rooms);
                         } else {
-                            Log.d(TAG, "onResponse: "+jsonObject.toString());
+                            Log.d(TAG, "onResponse: " + jsonObject.toString());
                         }
 
                     } catch (JSONException e) {
@@ -57,6 +68,7 @@ public class LoginAccountApiIml extends BaseRetrofitIml {
                     }
                 }
             }
+
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
                 listener.getMessageError(new Exception(t));

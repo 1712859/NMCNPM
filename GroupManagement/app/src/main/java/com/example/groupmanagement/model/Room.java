@@ -2,9 +2,15 @@ package com.example.groupmanagement.model;
 
 public class Room {
     String name;
-    int idroom;
+    String idroom;
 
-    public Room(String s) {
+    public Room(String name) {
+        this.name = name;
+    }
+
+    public Room(String name, String idroom) {
+        this.name = name;
+        this.idroom = idroom;
     }
 
     public String getName() {
@@ -15,16 +21,11 @@ public class Room {
         this.name = name;
     }
 
-    public int getIdroom() {
+    public String getIdroom() {
         return idroom;
     }
 
-    public void setIdroom(int idroom) {
-        this.idroom = idroom;
-    }
-
-    public Room(String name, int idroom) {
-        this.name = name;
+    public void setIdroom(String idroom) {
         this.idroom = idroom;
     }
 }
