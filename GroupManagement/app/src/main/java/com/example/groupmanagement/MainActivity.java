@@ -10,7 +10,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button login;
+    Button login,signup;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,10 +23,18 @@ public class MainActivity extends AppCompatActivity {
         actionBar.hide();
 
         login = (Button)findViewById(R.id.buttonDangNhap);
+        signup = (Button)findViewById(R.id.buttonDangKi);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,main_app.class);
+                startActivity(intent);
+            }
+        });
+        signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,create_account.class);
                 startActivity(intent);
             }
         });

@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.home.room_detail"></activity>
+        <activity android:name=".create_account"></activity>
+        <activity android:name=".ui.home.room_detail" />
         <activity
             android:name=".main_app"
             android:label="@string/title_activity_main_app" />
