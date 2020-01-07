@@ -12,7 +12,9 @@ import android.widget.Toast;
 import com.example.groupmanagement.apihelper.loginAccount.LoginAccountApiIml;
 import com.example.groupmanagement.listener.LoginListener;
 import com.example.groupmanagement.model.Account;
-import com.google.gson.JsonObject;
+import com.example.groupmanagement.model.Room;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -43,13 +45,15 @@ public class MainActivity extends AppCompatActivity {
                 //Get Api for authenticating
                 edtUsername.setText("tin98");
                 edtPassword.setText("123456");
-                String userName = edtUsername.getText().toString().trim();
-                String passWord = edtPassword.getText().toString().trim();
+                final String userName = edtUsername.getText().toString().trim();
+                final String passWord = edtPassword.getText().toString().trim();
                 new LoginAccountApiIml().authAccount(userName, passWord, new LoginListener() {
                     @Override
                     public void getDataSuccess(Account account) {
                         Intent intent = new Intent(MainActivity.this,main_app.class);
-                        intent.putExtra("jwt", account.getJwt());
+                        Bundle bundle = new Bundle();
+                        bundle.putString("jwt", account.getJwt());
+                        intent.putExtras(bundle);
                         startActivity(intent);
                     }
 
