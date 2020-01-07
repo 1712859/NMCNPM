@@ -57,6 +57,9 @@ public class HomeFragment extends Fragment {
         switch (id) {
             case R.id.btnAddRoom:
                 Intent intent = new Intent(getContext(), AddRoom.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("jwt", jwt);
+                intent.putExtras(bundle);
                 startActivity(intent);
                 return true;
         }
