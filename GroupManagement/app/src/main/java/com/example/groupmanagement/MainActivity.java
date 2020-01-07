@@ -36,15 +36,15 @@ public class MainActivity extends AppCompatActivity {
         //Buttnife
         ButterKnife.bind(this);
         //Click Login Button
-
+        edtUsername.setText("tin98");
+        edtPassword.setText("123456");
         login = (Button)findViewById(R.id.buttonDangNhap);
         logout = findViewById(R.id.buttonDangKi);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Get Api for authenticating
-                edtUsername.setText("tin98");
-                edtPassword.setText("123456");
+
                 String userName = edtUsername.getText().toString().trim();
                 String passWord = edtPassword.getText().toString().trim();
                 new LoginAccountApiIml().authAccount(userName, passWord, new LoginListener() {

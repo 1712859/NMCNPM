@@ -43,6 +43,7 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
+        registerForContextMenu(listView);
         return root;
     }
     @Override
