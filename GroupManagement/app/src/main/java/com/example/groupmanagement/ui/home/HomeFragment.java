@@ -21,18 +21,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.groupmanagement.R;
+import com.example.groupmanagement.ui.notifications.Notification;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class HomeFragment extends Fragment {
-
-    private HomeViewModel homeViewModel;
     private List<Room> mListRoom = new ArrayList<>();
-
-    public View onCreateView(@NonNull LayoutInflater inflater,
+    public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-//        homeViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         // get data tư api
         prepareRoomData();
@@ -41,11 +40,11 @@ public class HomeFragment extends Fragment {
 
         return root;
     }
+
     private void prepareRoomData() {
-        for(int i = 0; i < 15; i++){
+        for (int i = 0; i < 15; i++) {
             Room notification = new Room("Notification " + i);
             mListRoom.add(notification);
         }
     }
-
 }

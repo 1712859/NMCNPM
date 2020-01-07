@@ -1,25 +1,28 @@
 package com.example.groupmanagement.ui.home;
 
 import android.content.Context;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ArrayAdapter;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.example.groupmanagement.R;
 
 import java.util.List;
 
-public class AdapterRoom  extends BaseAdapter {
+public class AdapterRoom extends BaseAdapter {
 
     private List<Room> listData;
     private LayoutInflater layoutInflater;
     private Context context;
 
-    public AdapterRoom(Context aContext,  List<Room> listData) {
+    public AdapterRoom(Context aContext, List<Room> listData) {
         this.context = aContext;
         this.listData = listData;
         layoutInflater = LayoutInflater.from(aContext);
@@ -57,9 +60,9 @@ public class AdapterRoom  extends BaseAdapter {
         return convertView;
     }
 
-    static class ViewHolder {
-        ImageView image_room;
+    public class ViewHolder {
         TextView name_room;
+        ImageView image_room;
     }
-
 }
+
