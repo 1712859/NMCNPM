@@ -2,6 +2,10 @@ package com.example.groupmanagement.ui.home;
 
 public class Room {
     String name;
+    int idroom;
+
+    public Room(String s) {
+    }
 
     public String getName() {
         return name;
@@ -11,7 +15,16 @@ public class Room {
         this.name = name;
     }
 
-    public Room(String name) {
+    public int getIdroom() {
+        return idroom;
+    }
+
+    public void setIdroom(int idroom) {
+        this.idroom = idroom;
+    }
+
+    public Room(String name, int idroom) {
         this.name = name;
+        this.idroom = idroom;
     }
 }

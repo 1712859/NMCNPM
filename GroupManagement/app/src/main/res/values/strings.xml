@@ -183,7 +183,7 @@
     <string name="addComment_submitBtn">Đăng bình luận</string>
     <string name="title_activity_main_app">main_app</string>
 
-<!--  menu fragment  -->
+    <!--  menu fragment  -->
     <string name="title_home">Phòng</string>
     <string name="title_dashboard">Tài Khoản</string>
     <string name="title_notifications">Thông Báo</string>
