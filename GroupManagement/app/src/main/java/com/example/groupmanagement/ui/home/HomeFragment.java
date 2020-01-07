@@ -60,7 +60,7 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
-        registerForContextMenu(listView);
+
         return root;
     }
 
@@ -87,7 +87,10 @@ public class HomeFragment extends Fragment {
     }
 
     private void prepareRoomData(String jwt, String userName, String passWord) {
-
+        for (int i = 0; i < 15; i++) {
+            Room  notification = new Room("Phòng"+i,i);
+            mListRoom.add(notification);
+        }
     }
 
     @Override
