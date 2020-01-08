@@ -46,7 +46,19 @@ public class HomeFragment extends Fragment {
             jwt = args.getString("jwt");
             userName = args.getString("userName");
             passWord = args.getString("passWord");
+            mListRoom = (ArrayList<Room>)args.getSerializable("rooms");
         }
+        final ListView listView = (ListView) getActivity().findViewById(R.id.lvRoom);
+        listView.setAdapter(new AdapterRoom(getContext(), mListRoom));
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getContext(), room_detail.class);
+                intent.putExtra("idRoom", mListRoom.get(position).getIdroom());
+                startActivity(intent);
+            }
+        });
+        registerForContextMenu(listView);
         setHasOptionsMenu(true);
         return root;
     }

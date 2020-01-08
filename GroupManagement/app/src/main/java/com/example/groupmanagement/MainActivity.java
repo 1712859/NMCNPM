@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
                         Intent intent = new Intent(MainActivity.this,main_app.class);
                         Bundle bundle = new Bundle();
                         bundle.putString("jwt", account.getJwt());
+                        bundle.putSerializable("rooms", rooms);
                         intent.putExtras(bundle);
                         startActivity(intent);
                     }
