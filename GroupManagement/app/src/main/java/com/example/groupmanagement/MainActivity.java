@@ -39,40 +39,46 @@ public class MainActivity extends AppCompatActivity {
         //Click Login Button
         edtUsername.setText("Tu98");
         edtPassword.setText("123456");
-        login = (Button)findViewById(R.id.buttonDangNhap);
-        logout = findViewById(R.id.buttonDangKi);
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Get Api for authenticating
+        if(edtPassword != null & edtUsername != null){
+            login = (Button) findViewById(R.id.buttonDangNhap);
+            logout = findViewById(R.id.buttonDangKi);
+            login.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //Get Api for authenticating
 
-                final String userName = edtUsername.getText().toString().trim();
-                final String passWord = edtPassword.getText().toString().trim();
-                new LoginAccountApiIml().authAccount(userName, passWord, new LoginListener() {
-                    @Override
-                    public void getDataSuccess(Account account) {
-                        Intent intent = new Intent(MainActivity.this,main_app.class);
-                        Bundle bundle = new Bundle();
-                        bundle.putString("jwt", account.getJwt());
-                        intent.putExtras(bundle);
-                        startActivity(intent);
-                    }
+                    final String userName = edtUsername.getText().toString().trim();
+                    final String passWord = edtPassword.getText().toString().trim();
+                    new LoginAccountApiIml().authAccount(userName, passWord, new LoginListener() {
+                        @Override
+                        public void getDataSuccess(Account account) {
+                            Intent intent = new Intent(MainActivity.this, main_app.class);
+                            Bundle bundle = new Bundle();
+                            bundle.putString("jwt", account.getJwt());
+                            intent.putExtras(bundle);
+                            startActivity(intent);
+                        }
 
-                    @Override
-                    public void getMessageError(Exception e) {
-                        Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_SHORT).show();
-                        //throw new Error(e);
-                    }
-                });
-            }
-        });
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, create_account.class);
-                startActivity(intent);
-            }
-        });
+                        @Override
+                        public void getMessageError(Exception e) {
+                            Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_SHORT).show();
+                            //throw new Error(e);
+                        }
+                    });
+                }
+            });
+            logout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(MainActivity.this, create_account.class);
+                    startActivity(intent);
+                }
+            });
+        }
+        else
+        {
+            Toast.makeText(MainActivity.this,"xin nhập đủ thông tin đăng nhập", Toast.LENGTH_LONG).show();
+        }
 
     }
 }

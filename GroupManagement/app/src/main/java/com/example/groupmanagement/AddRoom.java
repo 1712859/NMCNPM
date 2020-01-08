@@ -43,38 +43,44 @@ public class AddRoom extends AppCompatActivity {
         oke.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Retrofit builder = new Retrofit.Builder()
-                        .baseUrl("http://group-management.herokuapp.com")
-                        .addConverterFactory(GsonConverterFactory.create())
-                        .build();
-                create_Room create_room = new create_Room(name.getText().toString());
-                userClient client = builder.create((userClient.class));
-                String term = "Bearer " + jwt;
-                Call<create_Room> call = client.createroom(term, create_room);
-                call.enqueue(new Callback<create_Room>() {
-                    @Override
-                    public void onResponse(Call<create_Room> call, Response<create_Room> response) {
-                        if (!response.isSuccessful()) {
-                            Toast.makeText(AddRoom.this, response.message(), Toast.LENGTH_LONG).show();
-                            return;
-                        } else {
-                            Intent intent = new Intent(AddRoom.this, room_detail.class);
-                            Bundle bundle = new Bundle();
-                            bundle.putString("jwt", jwt);
-                            intent.putExtras(bundle);
-                            bundle.putString("id_room", response.body().getId());
-                            intent.putExtras(bundle);
-                            startActivity(intent);
-                            Toast.makeText(AddRoom.this, "Tạo phòng thành công", Toast.LENGTH_LONG).show();
+                if(name!=null){
+                    Retrofit builder = new Retrofit.Builder()
+                            .baseUrl("http://group-management.herokuapp.com")
+                            .addConverterFactory(GsonConverterFactory.create())
+                            .build();
+                    create_Room create_room = new create_Room(name.getText().toString());
+                    userClient client = builder.create((userClient.class));
+                    String term = "Bearer " + jwt;
+                    Call<create_Room> call = client.createroom(term, create_room);
+                    call.enqueue(new Callback<create_Room>() {
+                        @Override
+                        public void onResponse(Call<create_Room> call, Response<create_Room> response) {
+                            if (!response.isSuccessful()) {
+                                Toast.makeText(AddRoom.this, response.message(), Toast.LENGTH_LONG).show();
+                                return;
+                            } else {
+                                Intent intent = new Intent(AddRoom.this, room_detail.class);
+                                Bundle bundle = new Bundle();
+                                bundle.putString("jwt", jwt);
+                                intent.putExtras(bundle);
+                                bundle.putString("id_room", response.body().getId());
+                                intent.putExtras(bundle);
+                                startActivity(intent);
+                                Toast.makeText(AddRoom.this, "Tạo phòng thành công", Toast.LENGTH_LONG).show();
+                            }
                         }
-                    }
 
-                    @Override
-                    public void onFailure(Call<create_Room> call, Throwable t) {
-                        Toast.makeText(AddRoom.this, "Tạo phòng không thành công", Toast.LENGTH_LONG).show();
-                    }
-                });
+                        @Override
+                        public void onFailure(Call<create_Room> call, Throwable t) {
+                            Toast.makeText(AddRoom.this, "Tạo phòng không thành công", Toast.LENGTH_LONG).show();
+                        }
+                    });
 
+                }
+                else
+                {
+                    Toast.makeText(AddRoom.this,"Chưa nhập tên phòng", Toast.LENGTH_LONG).show();
+                }
             }
         });
 

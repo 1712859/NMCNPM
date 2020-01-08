@@ -23,6 +23,7 @@ import com.example.groupmanagement.AddRoom;
 import com.example.groupmanagement.MainActivity;
 import com.example.groupmanagement.R;
 import com.example.groupmanagement.apihelper.loginAccount.LoginAccountApiIml;
+import com.example.groupmanagement.apihelper.loginAccount.userClient;
 import com.example.groupmanagement.listener.LoginListener;
 import com.example.groupmanagement.main_app;
 import com.example.groupmanagement.model.Account;
@@ -30,6 +31,9 @@ import com.example.groupmanagement.model.Room;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class HomeFragment extends Fragment {
@@ -42,6 +46,8 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         final View root = inflater.inflate(R.layout.fragment_home, container, false);
+
+        prepareRoomData();
         //Receive data from login
         if (getArguments() != null) {
             Bundle args = getArguments();
@@ -85,12 +91,15 @@ public class HomeFragment extends Fragment {
         inflater.inflate(R.menu.room_action_bar, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
-
-    private void prepareRoomData(String jwt, String userName, String passWord) {
+    private void prepareRoomData() {
         for (int i = 0; i < 15; i++) {
-            Room  notification = new Room("Phòng"+i,i);
+            Room notification = new Room("Room " + i, i);
             mListRoom.add(notification);
         }
+    }
+    private void prepareRoomData(String jwt) {
+
+
     }
 
     @Override

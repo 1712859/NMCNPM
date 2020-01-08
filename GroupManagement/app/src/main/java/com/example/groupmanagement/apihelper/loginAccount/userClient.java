@@ -1,5 +1,7 @@
 package com.example.groupmanagement.apihelper.loginAccount;
 
+import com.example.groupmanagement.model.Room;
+
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
