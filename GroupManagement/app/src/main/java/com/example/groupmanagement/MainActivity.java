@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     //Get Api for authenticating
 
+<<<<<<< HEAD
                     final String userName = edtUsername.getText().toString().trim();
                     final String passWord = edtPassword.getText().toString().trim();
                     new LoginAccountApiIml().authAccount(userName, passWord, new LoginListener() {
@@ -58,6 +59,20 @@ public class MainActivity extends AppCompatActivity {
                             intent.putExtras(bundle);
                             startActivity(intent);
                         }
+=======
+                final String userName = edtUsername.getText().toString().trim();
+                final String passWord = edtPassword.getText().toString().trim();
+                new LoginAccountApiIml().authAccountAsync(userName, passWord, new LoginListener() {
+                    @Override
+                    public void getDataSuccess(Account account, ArrayList<Room> rooms) {
+                        Intent intent = new Intent(MainActivity.this,main_app.class);
+                        Bundle bundle = new Bundle();
+                        bundle.putString("jwt", account.getJwt());
+                        bundle.putSerializable("rooms", rooms);
+                        intent.putExtras(bundle);
+                        startActivity(intent);
+                    }
+>>>>>>> 299bdb8d3ff8de522cb4e4d633b2c3b30af6705d
 
                         @Override
                         public void getMessageError(Exception e) {
